@@ -15,8 +15,9 @@ const Card = ({ user }: Props) => {
   const userImage = user?.image || ''
 
   return (
-    <div>
-      Card component is only visible to users who have logged in before
+    <div className="flex flex-col justify-center items-center gap-y-4">
+
+      <p className="mt-4">Card component is only visible to users who have logged in before</p>
 
       {/* Image for GitHub login */}
       <Image
@@ -27,6 +28,9 @@ const Card = ({ user }: Props) => {
             alt={user?.name ?? "Profile Pic"}
             priority={true}
       />
+
+      <h2>Hi! I&lsquo;m <span className="font-semibold">{user?.name}</span> on GitHub!</h2>
+      <p>This is my email: {user?.email}</p>
       
     </div>
   )
